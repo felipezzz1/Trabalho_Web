@@ -1,5 +1,5 @@
 import { EntityRepository, Repository } from "typeorm";
-import Car from "./entities/Car";
+import Car from "../entities/Car";
 
 @EntityRepository(Car)
 export default class CarsRepository extends Repository<Car>{

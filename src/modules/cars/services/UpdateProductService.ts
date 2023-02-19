@@ -1,7 +1,7 @@
 import AppError from "@shared/errors/AppError";
 import { getCustomRepository } from "typeorm";
-import CarsRepository from "../CarsRepository";
-import Car from "../entities/Car";
+import CarsRepository from "../typeorm/repositories/CarsRepository";
+import Car from "../typeorm/entities/Car";
 
 
 interface IRequest{

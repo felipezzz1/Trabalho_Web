@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import CreateCarService from "../typeorm/services/CreateCarService";
-import DeleteCarService from "../typeorm/services/DeleteCarService";
-import ListCarService from "../typeorm/services/ListCarService";
-import ShowCarService from "../typeorm/services/ShowCarService";
-import UpdateCarService from "../typeorm/services/UpdateProductService";
+import CreateCarService from "../services/CreateCarService";
+import DeleteCarService from "../services/DeleteCarService";
+import ListCarService from "../services/ListCarService";
+import ShowCarService from "../services/ShowCarService";
+import UpdateCarService from "../services/UpdateProductService";
 
 export default class CarsController{
     public async index(request: Request, response: Response): Promise<Response>{
