@@ -19,7 +19,7 @@ export default function isAuthenticated(request : Request,
         try{
             const decodeToken = verify(token, auth.jwt.secret);
             const { sub } = decodeToken as TokenPayLoad;
-            request.costumer = { id : sub};
+            request.user = { id : sub};
             return next();
         }catch{
             throw new AppError('Invalid JWT Token')

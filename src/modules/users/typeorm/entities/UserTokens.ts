@@ -1,14 +1,14 @@
 import { Column, CreateDateColumn, Entity, Generated, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity('costumer_tokens')
-export default class CostumerTokens{
+@Entity('user_tokens')
+export default class UserTokens{
     @PrimaryGeneratedColumn('uuid')
     id : string;
     @Column()
     @Generated('uuid')
     token : string;
     @Column()
-    costumer_id : string;
+    user_id : string;
     @CreateDateColumn()
     created_at : Date;
     @UpdateDateColumn()
