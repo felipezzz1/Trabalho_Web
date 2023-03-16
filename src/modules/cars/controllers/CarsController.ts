@@ -20,17 +20,17 @@ export default class CarsController{
     }
 
     public async create(request: Request, response: Response): Promise<Response>{
-        const { model, color, plate, mileage, seats, price, year } = request.body;
+        const { model, color, plate, mileage, seats, price, quantity, year } = request.body;
         const createCar = new CreateCarService();
-        const car = await createCar.execute( {model, color, plate, mileage, seats, price, year});
+        const car = await createCar.execute( {model, color, plate, mileage, seats, price, quantity, year});
         return response.json(car);
     }
 
     public async update(request: Request, response: Response): Promise<Response>{
-        const { model, color, plate, mileage, seats, price, year } = request.body;
+        const { model, color, plate, mileage, seats, price, quantity, year } = request.body;
         const { id } = request.params;
         const updateCar = new UpdateCarService();
-        const car = await updateCar.execute( {id, model, color, plate, mileage, seats, price, year});
+        const car = await updateCar.execute( {id, model, color, plate, mileage, seats, price, quantity, year});
         return response.json(car);
     }
 

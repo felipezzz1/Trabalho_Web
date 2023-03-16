@@ -12,12 +12,13 @@ interface IRequest{
     mileage : number;
     seats : number;
     price : number;
+    quantity : number;
     year : number;
 }
 
 export default class UpdateCarService{
 
-    public async execute({id, model, color, plate, mileage, seats, price, year}: IRequest) : Promise<Car>{
+    public async execute({id, model, color, plate, mileage, seats, price, quantity, year}: IRequest) : Promise<Car>{
         const carsRepository = getCustomRepository(CarsRepository);
         const car = await carsRepository.findOne(id);
         if(!car){
@@ -34,6 +35,7 @@ export default class UpdateCarService{
         car.mileage = mileage;
         car.seats = seats;
         car.price = price;
+        car.quantity = quantity;
         car.year = year;
 
         await carsRepository.save(car);

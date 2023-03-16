@@ -19,6 +19,7 @@ carRouter.post('/', celebrate({
         seats : Joi.number().required(),
         price : Joi.number().required(),
         year : Joi.number().required(),
+        quantity : Joi.number().required()
     }
 }), carController.create);
 
@@ -31,6 +32,7 @@ carRouter.put('/:id', celebrate({
         mileage : Joi.number(),
         seats : Joi.number(),
         price : Joi.number(),
+        quantity : Joi.number(),
         year : Joi.number(),
     }
 }), carController.update);

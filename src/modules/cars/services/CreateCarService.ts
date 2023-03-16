@@ -10,12 +10,13 @@ interface IRequest{
     mileage : number;
     seats : number;
     price : number;
+    quantity : number;
     year : number;
 }
 
 export default class CreateCarService{
 
-    public async execute({model, color, plate, mileage, seats, price, year}: IRequest) : Promise<Car>{
+    public async execute({model, color, plate, mileage, seats, price,quantity, year}: IRequest) : Promise<Car>{
         const carsRepository = getCustomRepository(CarsRepository);
         
         const carExists = await carsRepository.findByPlate(plate);
@@ -24,7 +25,7 @@ export default class CreateCarService{
         }
 
         const car = carsRepository.create({
-            model, color, plate, mileage, seats, price, year
+            model, color, plate, mileage, seats, price,quantity, year
         });
 
         await carsRepository.save(car);

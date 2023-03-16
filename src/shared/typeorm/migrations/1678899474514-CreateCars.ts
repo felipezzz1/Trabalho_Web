@@ -1,6 +1,6 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateCars1671406894935 implements MigrationInterface {
+export class CreateCars1678899474514 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
@@ -14,6 +14,7 @@ export class CreateCars1671406894935 implements MigrationInterface {
                     {name: 'mileage', type: 'decimal', precision: 10, scale: 3},
                     {name: 'seats', type: 'int'},
                     {name: 'price', type: 'decimal', precision: 10, scale: 2},
+                    {name: 'quantity', type: 'int'},
                     {name: 'year', type: 'int'},
                     {name: 'created_at', type: 'timestamp', default: 'now()'},
                     {name: 'updated_at', type: 'timestamp', default: 'now()'}
